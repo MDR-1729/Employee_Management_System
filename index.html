@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="mdb.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+    
+    <script src="jquery.js"></script>
+    <script src="popper.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="mdb.js"></script>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#"> <i class="fa fa-users"></i> Employee Manager </a>
+            <ul class="navbar-nav">
+                <li class="nav-item active px-3"> <a class="nav-link" href="#"> Home <span class="sr-only"> (current) </span> </a> </li>
+                <li class="nav-item px-3"> <a class="nav-link" href="#employees"> Employees </a> </li>
+                <li class="nav-item px-3"> <a class="nav-link" href="#departments"> Departments </a> </li>
+                <li class="nav-item px-3"> <a class="nav-link" href="#gallery"> Gallery </a> </li>
+                <li class="nav-item px-3"> <a class="nav-link" href="#contact"> Contact </a> </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div id="employeeCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#employeeCarousel" data-slide-to="0" class="active"> </li>
+            <li data-target="#employeeCarousel" data-slide-to="1"> </li>
+            <li data-target="#employeeCarousel" data-slide-to="2"> </li>
+            <li data-target="#employeeCarousel" data-slide-to="3"> </li>
+        </ol>
+        
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg" class="d-block w-100" alt="Employee Management Team">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1> Employee Management System </h1>
+                    <p> Manage employees, departments, attendance and performance. </p>
+                    <button class="btn btn-primary"> Explore Employees </button>
+                </div>
+            </div>
+            
+            <div class="carousel-item">
+                <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg" class="d-block w-100" alt="Team">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1> Manage Your Team </h1>
+                    <p> Keep employee information organized in one place. </p>
+                    <button class="btn btn-success"> View Employees </button>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg" class="d-block w-100" alt="Employee Collaboration">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1> Enhance Team Collaboration </h1>
+                    <p> Improve communication, coordinate tasks, and strengthen teamwork across your organization. </p>
+                    <button class="btn btn-success"> Explore Collaboration </button>
+                </div>
+            </div>
+            
+            <div class="carousel-item">
+                <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg" class="d-block w-100" alt="Office">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1> Track Employee Performance </h1>
+                    <p> Monitor attendance, performance and employee development. </p>
+                    <button class="btn btn-warning"> View Performance </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    $('.carousel').carousel({
+        interval: 2500
+    });
+    </script>
+    
+    <section class="bg-secondary text-white p-5">
+        <div class="container p-3">
+            <div class="row">
+                <div class="col">
+                    <h1 class="display-4"> Search Employee </h1>
+                    <p> Search Employees by using Name, Employee ID or Department. </p>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Enter Employee Name or ID">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="bg-light p-5">
+        <div class="container p-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card text-center mt-3">
+                        <div class="card-body">
+                            <i class="fa fa-user-plus fa-4x text-primary"></i>
+                            <h2 class="card-title"> Employee Registration </h2>
+                            <p class="card-text"> Register new employees, maintain professional information, and manage records efficiently for streamlined workforce administration. </p>
+                            <button class="btn btn-primary"> Add Employee </button>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="col-md-4">
+                <div class="card text-center mt-3">
+                    <div class="card-body">
+                        <i class="fa fa-clock-o fa-4x text-success"></i>
+                        <h2 class="card-title"> Attendance </h2>
+                        <p class="card-text"> Track employee attendance, monitor working hours, manage leave requests, and maintain accurate workforce records for improved productivity and efficient workforce management. </p>
+                        <button class="btn btn-success"> View Attendance </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card text-center mt-3">
+                    <div class="card-body">
+                        <i class="fa fa-money fa-4x text-warning"></i>
+                        <h2 class="card-title"> Payroll </h2>
+                        <p class="card-text"> Manage employee salary information, process payroll accurately, track compensation, calculate deductions, and ensure timely salary payments for efficient payroll management and financial transparency. </p>
+                        <button class="btn btn-warning"> View Payroll </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="container" id="employees">
+        <div class="row">
+            <div class="col text-center p-5">
+                <h1 class="display-4"> <span class="text-primary"> Our </span> Employees </h1>
+                <p> Manage employee profiles and professional information. </p>
+            </div>
+        </div>
+        
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg" class="card-img-top" alt="Employee">
+                    <div class="card-body">
+                        <h3 class="card-title"> Raj Kumar </h3>
+                        <p class="card-text">
+                            Employee ID: EMP101<br>
+                            Department: IT<br>
+                            Position: Software Developer
+                        </p>
+                        <button class="btn btn-primary"> View Profile </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg" class="card-img-top" alt="Employee">
+                    <div class="card-body">
+                        <h3 class="card-title"> Tanvi Sharma </h3>
+                        <p class="card-text">
+                            Employee ID: EMP102<br>
+                            Department: HR<br>
+                            Position: HR Manager
+                        </p>
+                        <button class="btn btn-primary"> View Profile </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg" class="card-img-top" alt="Employee">
+                    <div class="card-body">
+                        <h3 class="card-title"> Rakesh Gupta </h3>
+                        <p class="card-text">
+                            Employee ID: EMP103<br>
+                            Department: Finance<br>
+                            Position: Accountant
+                        </p>
+                        <button class="btn btn-primary"> View Profile </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-3">
+            <div class="col text-center mt-3">
+                <button class="btn btn-dark btn-lg mt-3"> <i class="fa fa-users"></i> VIEW ALL EMPLOYEES </button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="bg-primary text-white text-center p-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <i class="fa fa-users fa-3x"></i>
+                    <h2> 500+ </h2>
+                    <p> Employees </p>
+                </div>
+                
+                <div class="col-md-3">
+                    <i class="fa fa-building fa-3x"></i>
+                    <h2> 12 </h2>
+                    <p> Departments </p>
+                </div>
+                
+                <div class="col-md-3">
+                    <i class="fa fa-line-chart fa-3x"></i>
+                    <h2> 92% </h2>
+                    <p> Performance </p>
+                </div>
+                
+                <div class="col-md-3">
+                    <i class="fa fa-calendar fa-3x"></i>
+                    <h2> 98% </h2>
+                    <p> Attendance </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="container" id="departments">
+        <div class="row">
+            <div class="col text-center p-5">
+                <h1 class="display-4"> <span class="text-primary"> Company </span>Departments </h1>
+                <p> Explore the different departments within the Organization. </p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fa fa-laptop fa-4x text-primary"></i>
+                        <h3 class="card-title"> Information Technology </h3>
+                        <p> Software development, application support and technology. </p>
+                        <button class="btn btn-primary"> View Department </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fa fa-user-circle fa-4x text-success"></i>
+                        <h3 class="card-title"> Human Resources </h3>
+                        <p> Recruitment, employee relations, training and development. </p>
+                        <button class="btn btn-success"> View Department </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fa fa-bar-chart fa-4x text-warning"></i>
+                        <h3 class="card-title"> Finance </h3>
+                        <p> Accounting, budgeting, payroll and financial reporting. </p>
+                        <button class="btn btn-warning"> View Department </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="bg-light p-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1> Employee Performance </h1>
+                    <p> Monitor employee performance and professional development. </p>
+                    <button class="btn btn-primary"> View Performance Reports </button>
+                </div>
+                
+                <div class="col-md-6">
+                    <h5> Productivity </h5>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" style="width:90%"> 90% </div>
+                    </div>
+                    
+                    <h5> Attendance </h5>
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-success" style="width:95%"> 95% </div>
+                    </div>
+                    
+                    <h5> Project Completion </h5>
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" style="width:85%"> 85% </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-warning p-4 text-center">
+        <h1> Follow Employee Manager! </h1>
+        <p class="container"> Stay updated with company news, employee achievements and events. </p>
+        <i class="bi bi-facebook h1 m-3"></i>
+        <i class="bi bi-instagram h1 m-3"></i>
+        <i class="bi bi-linkedin h1 m-3"></i>
+        <i class="bi bi-youtube h1 m-3"></i>
+        <i class="bi bi-twitter h1 m-3"></i>
+    </section>
+
+    <section class="container" id="gallery">
+        <div class="row">
+            <div class="col text-center p-5">
+                <h1 class="display-4"> <span class="text-primary"> Office </span> Gallery </h1>
+                <p> Explore our workplace, teams and company events. </p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-3">
+                <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg" class="img-fluid m-2" style="border-radius:25px;" alt="Office">
+            </div>
+            
+            <div class="col-md-3">
+                <img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg" class="img-fluid m-2" style="border-radius:25px;" alt="Team">
+            </div>
+
+            <div class="col-md-3">
+                <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg" class="img-fluid m-2" style="border-radius:25px;" alt="Meeting">
+            </div>
+            
+            <div class="col-md-3">
+                <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" class="img-fluid m-2" style="border-radius:25px;" alt="Employees">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-3">
+                <img src="https://images.pexels.com/photos/15543216/pexels-photo-15543216.jpeg" class="img-fluid m-2" style="border-radius:25px;" alt="Office">
+            </div>
+            
+            <div class="col-md-3">
+                <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg" class="img-fluid m-2" style="border-radius:25px;" alt="Team">
+            </div>
+            
+            <div class="col-md-3">
+                <img src="https://images.pexels.com/photos/3182781/pexels-photo-3182781.jpeg" class="img-fluid m-2" style="border-radius:25px;" alt="Meeting">
+            </div>
+            
+            <div class="col-md-3">
+                <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg" class="img-fluid m-2" style="border-radius:25px;" alt="Office">
+            </div>
+        </div>
+    </section>
+    
+    <footer class="bg-dark text-white mt-5 p-5" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3> <i class="fa fa-users"></i> Employee Manager </h3>
+                    <p> A simple employee management platform for managing employees, departments, attendance, payroll and performance. </p>
+                </div>
+                
+                <div class="col-md-4">
+                <h4> Quick Links </h4>
+                <p> <a href="#" class="text-white"> Home </a> </p>
+                <p> <a href="#employees" class="text-white"> Employees </a> </p>
+                <p> <a href="#departments" class="text-white"> Departments </a> </p>
+                <p> <a href="#gallery" class="text-white"> Gallery </a> </p>
+            </div>
+            
+            <div class="col-md-4">
+                <h4> Contact Us </h4>
+                <p> <i class="fa fa-map-marker"></i> Vijayawada, Andhra Pradesh </p>
+                <p> <i class="fa fa-phone"></i> +91 9876543210 </p>
+                <p> <i class="fa fa-envelope"></i> employeemanager2026@example.com </p>
+            </div>
+        </div>
+        
+        <hr class="bg-white">
+        <div class="text-center">
+            <p class="mb-0"> © 2026 Employee Management System. All Rights Reserved. </p> <br>
+            <p> Developed and Maintained by the MDR. </p>
+        </div>
+    </footer>
+
+</body>
+</html>
